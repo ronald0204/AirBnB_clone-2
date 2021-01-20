@@ -66,6 +66,10 @@ class FileStorage:
         """ Delete obj if its inside """
         if not obj:
             return
+    
+    def close(self):
+        """call reload() method for deserializing the JSON file to objects"""
+        self.reload()
 
         k = "{}.{}".format(type(obj).__name__, obj.id)
 
